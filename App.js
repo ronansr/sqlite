@@ -13,10 +13,10 @@ import { Asset } from 'expo-asset';
 import * as FileSystem from 'expo-file-system';
 
 
-const salva = () => {FileSystem.downloadAsync(
+FileSystem.downloadAsync(
   Asset.fromModule(require('./src/database/db3.db')).uri,
 `${FileSystem.documentDirectory}/SQLite/db3.db`
-);}
+);
 // const db2 = FileSystem.downloadAsync(
 //     './src/database/teste.db',
 //     FileSystem.documentDirectory + 'teste.db'
@@ -35,7 +35,6 @@ class Items extends React.Component {
   };
 
   componentDidMount() {
-    salva();
     this.update();
   }
 
